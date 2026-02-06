@@ -1,0 +1,302 @@
+[
+  {
+    "id": "9eff8f4b-1112-4c89-a4d2-d9f7eceda05e",
+    "date": "2026-01-23",
+    "exercise": "Bench Press",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 6,
+    "weight": 185,
+    "duration": 20
+  },
+  {
+    "id": "5e74b704-5d60-4ae0-ae51-2071a6f47b1e",
+    "date": "2026-01-22",
+    "exercise": "Squat",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 6,
+    "weight": 225,
+    "duration": 30
+  },
+  {
+    "id": "37401330-1dd4-4bef-ae87-fb2f833fd7a8",
+    "date": "2026-01-21",
+    "exercise": "Deadlift",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 4,
+    "weight": 275,
+    "duration": 30
+  },
+  {
+    "id": "f6c4e818-be2a-4edc-813c-a891aedce0fd",
+    "date": "2026-01-20",
+    "exercise": "Overhead Press",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 5,
+    "weight": 120,
+    "duration": 20
+  },
+  {
+    "id": "a6d7925d-0683-45b4-be78-ada73f3113bd",
+    "date": "2026-01-19",
+    "exercise": "Pull Ups",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 4,
+    "weight": 80,
+    "duration": 15
+  },
+  {
+    "id": "234c459d-e988-4297-be01-2df082ffd3b3",
+    "date": "2026-01-18",
+    "exercise": "Running",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 35
+  },
+  {
+    "id": "8c427d23-f424-4268-bcac-e3baa5129360",
+    "date": "2026-01-17",
+    "exercise": "Cycling",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 45
+  },
+  {
+    "id": "44db2456-9ee4-42b4-9ecb-42e443e43622",
+    "date": "2026-01-16",
+    "exercise": "Basketball",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 30
+  },
+  {
+    "id": "90c3b31b-721d-4403-97f5-74db24ce02a8",
+    "date": "2026-01-15",
+    "exercise": "Swimming",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 35
+  },
+  {
+    "id": "e71a2f27-0ffd-4444-b75c-99602cbde484",
+    "date": "2026-01-14",
+    "exercise": "Hiking",
+    "type": "Endurance",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 65
+  },
+  {
+    "id": "554b25c5-e01f-42ae-8939-b14de05dd904",
+    "date": "2026-01-13",
+    "exercise": "Cycling",
+    "type": "Endurance",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 75
+  },
+  {
+    "id": "f7a45245-1c09-4b1e-8348-7fd9bf536aa6",
+    "date": "2026-01-12",
+    "exercise": "Walking",
+    "type": "Endurance",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 45
+  },
+  {
+    "id": "3faa9f90-436e-4a90-a0a4-e1fed2bd8607",
+    "date": "2026-01-11",
+    "exercise": "Bench Press",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 6,
+    "weight": 185,
+    "duration": 20
+  },
+  {
+    "id": "d715c4ea-39ce-4baf-825c-7428e857328b",
+    "date": "2026-01-10",
+    "exercise": "Squat",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 6,
+    "weight": 225,
+    "duration": 30
+  },
+  {
+    "id": "d3b29055-4a34-4c79-817a-bdc105a677d9",
+    "date": "2026-01-09",
+    "exercise": "Deadlift",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 4,
+    "weight": 275,
+    "duration": 30
+  },
+  {
+    "id": "248c7e8c-9774-4dc0-a56c-e73beba82461",
+    "date": "2026-01-08",
+    "exercise": "Overhead Press",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 5,
+    "weight": 120,
+    "duration": 20
+  },
+  {
+    "id": "e4a03544-0b41-4da6-916d-6cbe682de9b6",
+    "date": "2026-01-07",
+    "exercise": "Pull Ups",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 4,
+    "weight": 80,
+    "duration": 15
+  },
+  {
+    "id": "068b5eb5-04e8-4508-99f4-99527b3aea48",
+    "date": "2026-01-06",
+    "exercise": "Running",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 35
+  },
+  {
+    "id": "2fd3615f-2352-490e-8555-6b2e89ac8bf4",
+    "date": "2026-01-05",
+    "exercise": "Cycling",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 45
+  },
+  {
+    "id": "0bba08fb-9539-42e9-b5a4-1e819723afd0",
+    "date": "2026-01-04",
+    "exercise": "Basketball",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 30
+  },
+  {
+    "id": "f960e451-46a4-4267-8662-481d9856c5a4",
+    "date": "2026-01-03",
+    "exercise": "Swimming",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 35
+  },
+  {
+    "id": "60bc536e-6b8f-42e1-aa17-6360843ba7c4",
+    "date": "2026-01-02",
+    "exercise": "Hiking",
+    "type": "Endurance",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 65
+  },
+  {
+    "id": "27e6e06c-94fc-4d7c-a1b9-d202d4db4fd9",
+    "date": "2026-01-01",
+    "exercise": "Cycling",
+    "type": "Endurance",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 75
+  },
+  {
+    "id": "ba34c211-27dd-4ae3-974d-dd33617f22db",
+    "date": "2025-12-31",
+    "exercise": "Walking",
+    "type": "Endurance",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 45
+  },
+  {
+    "id": "79626568-6f9d-4e66-b6fb-9edd4408ba61",
+    "date": "2025-12-30",
+    "exercise": "Bench Press",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 6,
+    "weight": 185,
+    "duration": 20
+  },
+  {
+    "id": "6b6d6f17-6b12-45bd-b21f-07f6d8969083",
+    "date": "2025-12-29",
+    "exercise": "Squat",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 6,
+    "weight": 225,
+    "duration": 30
+  },
+  {
+    "id": "22f50d93-bc9b-43e5-b5b8-8073ade8ecf1",
+    "date": "2025-12-28",
+    "exercise": "Deadlift",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 4,
+    "weight": 275,
+    "duration": 30
+  },
+  {
+    "id": "2b88f7d7-0154-456e-bf1e-bc0e2d44b5ed",
+    "date": "2025-12-27",
+    "exercise": "Overhead Press",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 5,
+    "weight": 120,
+    "duration": 20
+  },
+  {
+    "id": "5ceb8df0-8955-4ae7-8d8f-6c59b81c95be",
+    "date": "2025-12-26",
+    "exercise": "Pull Ups",
+    "type": "Strength",
+    "sets": 2,
+    "reps": 4,
+    "weight": 80,
+    "duration": 15
+  },
+  {
+    "id": "11d4500b-b29b-4c47-9804-530c610e8d3a",
+    "date": "2025-12-25",
+    "exercise": "Running",
+    "type": "Cardio",
+    "sets": 0,
+    "reps": 0,
+    "weight": 0,
+    "duration": 35
+  }
+]

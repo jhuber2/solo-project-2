@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workout Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div>
+          <h1>Workout Tracker</h1>
+        </div>
+      </div>
+
+      <nav class="tabs" aria-label="Views">
+        <button class="tab is-active" data-view="listView">Workouts</button>
+        <button class="tab" data-view="statsView">Stats</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- LIST VIEW -->
+    <section id="listView" class="view">
+      <div class="toolbar card">
+        <div class="toolbar-left">
+          <h2 class="section-title">All Workouts</h2>
+        </div>
+        <div class="toolbar-right">
+          <button id="addNewBtn" class="btn btn-primary">+ Add Workout</button>
+        </div>
+      </div>
+
+      <div class="table-wrap card">
+        <table class="table" aria-label="Workout list">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Exercise</th>
+              <th>Type</th>
+              <th>Sets</th>
+              <th>Reps</th>
+              <th>Weight (lbs)</th>
+              <th>Duration (min)</th>
+              <th class="actions-col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="workoutsTbody"></tbody>
+        </table>
+
+        <p id="emptyState" class="muted empty hidden">No workouts yet. Click “+ Add Workout”.</p>
+
+        <!-- NEW: Pager -->
+        <div class="pager">
+          <button id="prevPageBtn" class="btn btn-ghost">← Prev</button>
+          <div id="pageIndicator" class="pager-indicator muted small">Page 1 of 1</div>
+          <button id="nextPageBtn" class="btn btn-ghost">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM VIEW -->
+    <section id="formView" class="view hidden">
+      <div class="card form-card">
+        <div class="form-header">
+          <h2 id="formTitle" class="section-title">Add Workout</h2>
+          <p class="muted small">Fields with <span class="req">*</span> are required.</p>
+        </div>
+
+        <form id="workoutForm" class="form">
+          <input type="hidden" id="workoutId" />
+
+          <div class="grid">
+            <label>
+              Date <span class="req">*</span>
+              <input id="date" type="date" required />
+            </label>
+
+            <label>
+              Exercise <span class="req">*</span>
+              <input id="exercise" type="text" maxlength="40" placeholder="e.g., Bench Press" required />
+            </label>
+
+            <label>
+              Type <span class="req">*</span>
+              <select id="workoutType" required>
+                <option value="">Select…</option>
+                <option value="Strength">Strength</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Endurance">Endurance</option>
+              </select>
+            </label>
+
+            <label>
+              Duration (min)
+              <input id="duration" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g., 45" />
+            </label>
+
+            <label>
+              Sets
+              <input id="sets" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g., 2" />
+            </label>
+
+            <label>
+              Reps
+              <input id="reps" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g., 8" />
+            </label>
+
+            <label>
+              Weight (lbs)
+              <input id="weight" type="number" min="0" step="0.5" inputmode="decimal" placeholder="e.g., 185" />
+            </label>
+          </div>
+
+          <div id="formError" class="error hidden" role="alert"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" id="cancelBtn" class="btn btn-ghost">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- STATS VIEW -->
+    <section id="statsView" class="view hidden">
+      <div class="card">
+        <h2 class="section-title">Stats</h2>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-label">Total Workouts</div>
+            <div id="statTotal" class="stat-value">0</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-label">Most Frequent Workout</div>
+            <div id="statMostFreq" class="stat-value">—</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-label">Total Time Exercised (min)</div>
+            <div id="statTotalTime" class="stat-value">0</div>
+          </div>
+
+          <div class="stat">
+            <div class="stat-label">Total Weight Lifted (lbs)</div>
+            <div id="statTotalWeight" class="stat-value">0</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
