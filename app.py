@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 from uuid import uuid4
 
 from flask import Flask, jsonify, request, send_from_directory
+from flask_cors import CORS
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(APP_DIR, "data")
@@ -18,6 +19,17 @@ ALLOWED_TYPES = {"Strength", "Cardio", "Endurance"}
 
 lock = threading.Lock()
 app = Flask(__name__, static_folder="static", static_url_path="")
+
+CORS(
+    app,
+    resources={r"/api/*": {"origins": [
+        "https://fantastic-gingersnap-acf129.netlify.app"
+    ]}},
+    supports_credentials=False,
+    allow_headers=["Content-Type"],
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+)
+
 
 
 # ----------------------------
