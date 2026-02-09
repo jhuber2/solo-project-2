@@ -1,7 +1,8 @@
 (function () {
-  // If frontend & backend are same origin (Flask serving static), this works.
-  // For Netlify + separate backend later, you’ll change this to full URL.
-  const API_BASE = "";
+  // Netlify-hosted frontend -> local Flask API
+  // Your terminal shows: http://127.0.0.1:5000
+  const API_BASE_PRIMARY = "http://127.0.0.1:5000";
+  const API_BASE_FALLBACK = "http://localhost:5000";
 
   const PAGE_SIZE = 10; // fixed requirement
   let currentPage = 1;
@@ -14,25 +15,52 @@
     return Number.isFinite(n) ? n : 0;
   }
 
+  // Tries primary base, falls back to localhost if needed.
   async function apiFetch(path, options = {}) {
-    const res = await fetch(`${API_BASE}${path}`, {
-      headers: { "Content-Type": "application/json", ...(options.headers || {}) },
-      ...options,
-    });
+    const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
 
-    // Try to parse JSON either way
-    let data = null;
-    try { data = await res.json(); } catch { /* ignore */ }
+    async function tryOnce(baseUrl) {
+      const res = await fetch(`${baseUrl}${path}`, {
+        headers,
+        ...options,
+      });
 
-    if (!res.ok) {
-      const msg = data?.errors?.join(" ") || data?.error || `Request failed (${res.status})`;
-      const err = new Error(msg);
-      err.status = res.status;
-      err.data = data;
-      throw err;
+      // Try to parse JSON either way
+      let data = null;
+      try {
+        data = await res.json();
+      } catch {
+        /* ignore */
+      }
+
+      if (!res.ok) {
+        const msg =
+          data?.errors?.join(" ") ||
+          data?.error ||
+          `Request failed (${res.status})`;
+        const err = new Error(msg);
+        err.status = res.status;
+        err.data = data;
+        throw err;
+      }
+
+      return data;
     }
 
-    return data;
+    try {
+      return await tryOnce(API_BASE_PRIMARY);
+    } catch (err) {
+      // If the server isn't reachable on 127.0.0.1, try localhost.
+      // Note: If you get a CORS error, this fallback won't help; you'll need CORS enabled in Flask.
+      if (
+        err?.message?.includes("Failed to fetch") ||
+        err?.message?.includes("NetworkError") ||
+        err?.name === "TypeError"
+      ) {
+        return await tryOnce(API_BASE_FALLBACK);
+      }
+      throw err;
+    }
   }
 
   // ----------------------------
@@ -154,7 +182,6 @@
 
       UI.showView("listView");
     } catch (err) {
-      // Server-side validation errors shown here
       UI.setFormError(err.message);
     }
   }
@@ -174,14 +201,11 @@
     }
 
     if (deleteId) {
-      // We might not have this workout object locally due to paging, so fetch for confirm message
       try {
         const w = await getWorkout(deleteId);
         if (confirm(`Delete workout on ${w.date} (${w.exercise})?`)) {
           await deleteWorkout(deleteId);
 
-          // Reload page; if deletion caused this page to become empty and we're not on page 1, go back a page
-          // We'll simply try currentPage first, then fallback if needed
           await loadPage(currentPage);
 
           // If table is empty but there are pages behind us, go back one
@@ -208,7 +232,6 @@
   // Init
   // ----------------------------
   async function init() {
-    // initial list load
     await loadPage(1);
 
     document.getElementById("addNewBtn").addEventListener("click", onAddWorkout);
